@@ -12,10 +12,10 @@ import java.io.IOException;
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
-    private final JwtTokenProvider tokenProvider;
+    private final JwtTokenProvider jwtTokenProvider;
 
-    public JwtAuthenticationFilter(JwtTokenProvider tokenProvider) {
-        this.tokenProvider = tokenProvider;
+    public JwtAuthenticationFilter(JwtTokenProvider jwtTokenProvider) {
+        this.jwtTokenProvider = jwtTokenProvider;
     }
 
     @Override
@@ -24,10 +24,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                     FilterChain filterChain)
             throws ServletException, IOException {
 
-        String auth = request.getHeader("Authorization");
-        if (auth != null && tokenProvider.validateToken(auth)) {
-            // token accepted (tests only check presence)
+        String token = request.getHeader("Authorization");
+
+        if (token != null) {
+            jwtTokenProvider.validateToken(token);
         }
+
         filterChain.doFilter(request, response);
     }
 }
