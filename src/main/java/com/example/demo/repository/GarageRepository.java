@@ -1,4 +1,4 @@
 package com.example.demo.repository;
-public interface VehicleRepository{
+public interface GarageRepository{
     
 }
