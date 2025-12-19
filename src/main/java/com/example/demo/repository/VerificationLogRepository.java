@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.entity.VerificationLogRepository;
 
 @Repository
-public interface VerRepository extends JpaRepository<ServicePartRepository,Integer>{
+public interface VerificationLogRepository extends JpaRepository<VerificationLogRepository,Integer>{
     
 }
