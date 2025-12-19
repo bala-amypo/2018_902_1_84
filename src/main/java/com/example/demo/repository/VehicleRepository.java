@@ -1,4 +1,11 @@
 package com.example.demo.repository;
-public interface VehicleRepository{
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.entity.VehicleRepository;
+
+@Repository
+public interface VehicleRepository extends JpaRepository<VehicleRepository,Integer>{
     
 }

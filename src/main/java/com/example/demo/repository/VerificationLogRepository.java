@@ -1,4 +1,11 @@
 package com.example.demo.repository;
-public interface VerificationLogRepository{
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.entity.VerificationLogRepository;
+
+@Repository
+public interface VerRepository extends JpaRepository<ServicePartRepository,Integer>{
     
 }
