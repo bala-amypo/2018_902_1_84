@@ -1,1 +1,4 @@
-package com.exampkle
+package com.example.demo.Service.Impl;
+public class UserServiceImpl extends UserService{
+    
+}
