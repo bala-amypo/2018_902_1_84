@@ -54,3 +54,5 @@ public class ServiceEntry {
 
     public LocalDateTime getRecordedAt() { return recordedAt; }
 }
+
+
