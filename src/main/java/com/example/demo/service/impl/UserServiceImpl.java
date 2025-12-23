@@ -17,13 +17,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public AuthResponse register(AuthRequest request) {
-        String token = jwtTokenProvider.generateToken(request.getEmail());
-        return new AuthResponse(token);
+        return new AuthResponse(jwtTokenProvider.generateToken(request.getEmail()));
     }
 
     @Override
     public AuthResponse login(AuthRequest request) {
-        String token = jwtTokenProvider.generateToken(request.getEmail());
-        return new AuthResponse(token);
+        return new AuthResponse(jwtTokenProvider.generateToken(request.getEmail()));
     }
 }
