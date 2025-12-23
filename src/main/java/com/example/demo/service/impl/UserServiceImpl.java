@@ -25,3 +25,10 @@ public class UserServiceImpl implements UserService {
         return new AuthResponse(jwtTokenProvider.generateToken(request.getEmail()));
     }
 }
+
+
+
+
+
+
+
