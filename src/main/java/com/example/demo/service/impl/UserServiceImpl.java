@@ -1,6 +1,7 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.dto.AuthRequest;
+import com.example.demo.dto.AuthResponse;
 import com.example.demo.service.UserService;
 import org.springframework.stereotype.Service;
 
@@ -8,18 +9,20 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     @Override
-    public void login(AuthRequest request) {
+    public AuthResponse login(AuthRequest request) {
         String email = request.getEmail();
         String password = request.getPassword();
 
-        // TODO: login logic
+        // TODO: real login logic
+        return new AuthResponse("Login successful");
     }
 
     @Override
-    public void register(AuthRequest request) {
+    public AuthResponse register(AuthRequest request) {
         String email = request.getEmail();
         String password = request.getPassword();
 
-        // TODO: register logic
+        // TODO: real register logic
+        return new AuthResponse("Registration successful");
     }
 }
