@@ -2,8 +2,10 @@ package com.example.demo.controller;
 
 import com.example.demo.dto.AuthRequest;
 import com.example.demo.dto.AuthResponse;
+import com.example.demo.model.User;
 import com.example.demo.service.UserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,12 +20,18 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public AuthResponse register(@RequestBody AuthRequest request) {
-        return userService.register(request);
+    public ResponseEntity<User> register(@RequestBody User user) {
+        return ResponseEntity.ok(userService.register(user));
     }
 
-    @PostMapping("/login")
-    public AuthResponse login(@RequestBody AuthRequest request) {
-        return userService.login(request);
+    @PostMapping("/login") // Note: Usually POST, following Step 2 and Step 4 instructions
+    public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request) {
+        return ResponseEntity.ok(userService.login(request));
+    }
+    
+    // Some project instructions mention GET /login for simple demos, implemented below if needed:
+    @GetMapping("/login")
+    public ResponseEntity<String> getLoginPageInfo() {
+        return ResponseEntity.ok("Please provide credentials via POST to /auth/login");
     }
 }
