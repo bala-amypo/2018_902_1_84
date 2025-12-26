@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class JwtUtil {
 
-    private static final String SECRET_KEY = "mysecretkey";
+    private static final String SECRET_KEY = "abcdefghijklmnopqrstuvwxyz1g2g3g";
 
     // ✅ REQUIRED BY TEST CASE
     public String generateToken(String username, String role, Long userId) {
