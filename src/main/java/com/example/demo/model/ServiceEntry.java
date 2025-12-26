@@ -35,4 +35,4 @@ public class ServiceEntry {
     public void setDescription(String description) { this.description = description; }
     public LocalDateTime getRecordedAt() { return recordedAt; }
     public void setRecordedAt(LocalDateTime recordedAt) { this.recordedAt = recordedAt; }
-}
+}   
