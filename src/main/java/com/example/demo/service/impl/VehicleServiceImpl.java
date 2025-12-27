@@ -24,7 +24,8 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public Vehicle getVehicleByVin(String vin) {
-        return vehicleRepository.findByVin(vin);
+        return vehicleRepository.findByVin(vin)
+                .orElseThrow(() -> new EntityNotFoundException("Vehicle not found"));
     }
 
     @Override
